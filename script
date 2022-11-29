@@ -1,0 +1,30 @@
+pipeline{
+    agent any
+    stages{
+        stage('Premier Stage'){
+            steps{
+               bat "echo'Un premier Bonjour!'"
+            }
+            
+        }
+        stage('Deuxieme stage'){
+            step{
+               bat "echo'Deuxieme Bonjour!'"
+               bat "echo'Au revoir!'"
+                
+        }
+    }
+}
+
+
+
+pipeline{
+    agent any
+    satges{
+        stage('git checkout'){
+            steps{
+                git credentialsId:'git_credentials', url:'https://github.com/B-SANGARE/Pipeline.git'
+            }
+        }
+    }
+}
